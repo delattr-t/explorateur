@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Cartographia Exploratoria",
+    "slug": "cartographia-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#d4c5a9"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cartographia.explorer",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Cette app a besoin de votre position pour tracer votre parcours sur la carte.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Cette app trace votre parcours même en arrière-plan pour créer une carte complète de votre exploration.",
+        "NSLocationAlwaysUsageDescription": "Cette app a besoin d'accéder à votre position en arrière-plan pour tracer votre parcours complet.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#d4c5a9"
+      },
+      "package": "com.cartographia.explorer",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permet à Cartographia de tracer votre parcours même en arrière-plan.",
+          "locationAlwaysPermission": "Permet à Cartographia de tracer votre parcours complet.",
+          "locationWhenInUsePermission": "Permet à Cartographia de connaître votre position.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ]
+    ]
+  }
+}
